@@ -12,4 +12,5 @@ This is  an app that allows you to recruit a well-balanced team of superheroes.
 * Open file on local computer
 
 ##### Licence
-MIT  https://opensource.org/licenses/MIT
+MIT :
+https://opensource.org/licenses/MIT
