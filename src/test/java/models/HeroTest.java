@@ -34,5 +34,10 @@ public class HeroTest {
         assertEquals(0, myHeroes.getId());
     }
 
+    @Test
+    public void testForName() throws Exception {
+        Hero myHeroes = new Hero("Flash", 22, "Speed", "Stress");
+            assertEquals("Flash", myHeroes.getName());
+    }
 
 }
