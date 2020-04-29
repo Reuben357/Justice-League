@@ -1,46 +1,35 @@
 package models;
 
+
 import java.util.ArrayList;
-import java.util.List;
 
-public class HeroSquads {
-    private String mName;
-    private static List<HeroSquads> instances = new ArrayList<HeroSquads>();
-    private List<Hero> mHero;
-    private int id;
+public class Squad {
+    private String squadName;
+    private int maxNum;
+    private static ArrayList<Squad> instances = new ArrayList<>();
 
-    public HeroSquads(String name){
-        this.mName = name;
-        this.id = instances.size();
-        instances.add(this);
-        this.mHero = new ArrayList<Hero>();
+    private String cause;
+
+    public Squad(String squadName, int maxNum, String cause){
+        this.squadName= squadName;
+        this.maxNum= maxNum;
+        this.cause = cause;
+        
     }
 
-    public String getName(){
-        return mName;
-    }
-
-    public static List<HeroSquads> getAll(){
+    public static ArrayList<Squad> getAll() {
         return instances;
     }
 
-    public static void clear() {
-        instances.clear();
+    public String getName(){
+        return squadName;
     }
 
-    public int getId(){
-        return id;
-    }
+    public int getMaxNum(){return maxNum;}
 
-    public static HeroSquads find(int id){
-        return instances.get(id-1);
-    }
+    public String getCause(){return cause;}
 
-    public List<Hero>getHeroes(){
-        return mHero;
-    }
 
-  public void addHeroes(Hero heroes){
-     mHero.add(heroes);
-   }
+
 }
+
