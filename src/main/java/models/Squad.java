@@ -1,14 +1,13 @@
 package models;
 
-
 import java.util.ArrayList;
 
 public class Squad {
-    private String squadName;
-    private int maxNum;
-    private static ArrayList<Squad> instances = new ArrayList<>();
+    private final String squadName;
+    private final int maxNum;
+    private static final ArrayList<Squad> instances = new ArrayList<>();
 
-    private String cause;
+    private final String cause;
 
     public Squad(String squadName, int maxNum, String cause){
         this.squadName= squadName;
@@ -25,9 +24,13 @@ public class Squad {
         return squadName;
     }
 
-    public int getMaxNum(){return maxNum;}
+    public int getMaxNum(){
+        return maxNum;
+    }
 
-    public String getCause(){return cause;}
+    public String getCause(){
+        return cause;
+    }
 
 
 

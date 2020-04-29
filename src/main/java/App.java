@@ -13,7 +13,7 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         ProcessBuilder process = new ProcessBuilder();
-        Integer port;
+        int port;
 
         if (process.environment().get("PORT") != null) {
             port = Integer.parseInt(process.environment().get("PORT"));
@@ -46,10 +46,10 @@ public class App {
         //get to show all heros
         get("/",(request, response) -> {
             Map<String,Object> model = new HashMap<>();
-            ArrayList<Hero> heros = Hero.getAll();
+            ArrayList<Hero> hero = Hero.getAll();
             ArrayList<Squad>squads =Squad.getAll();
-            model.put("heros",heros);
-//            model.put("squads",squads);
+            //model.put("hero",hero)
+            model.put("squads",squads);
             return new ModelAndView(model,"index.hbs");
 
         }, new HandlebarsTemplateEngine());
@@ -100,7 +100,7 @@ public class App {
         //squad
 
         //get to show new squad form
-        get("/squads/list",(request, response) -> {
+        get("/squads/new/",(request, response) -> {
             Map<String,Object> model = new HashMap<>();
             return new ModelAndView(model,"squad-form.hbs");
 
@@ -108,7 +108,7 @@ public class App {
 
 
         //task: process new squad form
-        post ("/squads/list",(request, response) -> {
+        post ("/squads/",(request, response) -> {
             Map<String,Object>model = new HashMap<>();
             String squadName =request.queryParams("squadName");
             int squadNumber = Integer.parseInt(request.queryParams("squadNumber"));

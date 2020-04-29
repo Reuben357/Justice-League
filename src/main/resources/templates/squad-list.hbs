@@ -1,14 +1,16 @@
+<h1>Squads</h1>
 {{#partial "content"}}
     <h1>Squads</h1>
+    <p>{{squads}}</p>
 
     {{#if squads}}
-        {{#each squads}}
+        {{#each squad}}
             <div class="list">
                 <ul>
                     <li>
-                        <p>Squad Name: <span>{{squadName}}</span></p>
-                        <p>Squad Size :{{squadNumber}}</p>
-                        <p>Cause:{{squadCause}}</p>
+                        <p>Squad Name: <span>{{squad.squadName}}</span></p>
+                        <p>Squad Size :{{squad.squadNumber}}</p>
+                        <p>Cause:{{squad.squadCause}}</p>
                     </li>
                 </ul>
             </div>
