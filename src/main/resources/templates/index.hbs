@@ -1,0 +1,27 @@
+{{#partial "styles"}}
+    <link rel="stylesheet" href="../css/styles.css">
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="jumbotron" style="text-align:center;">
+        <p>The world has grown dark, and while we have reasons to fear we have the strength not to.
+            There are heroes among us, to remind us that only from fear, comes courage.
+             That only from the darkness, can we truly feel the light.</p>
+    <br><br>
+    {{#if heros}}
+        {{#each heros}}
+
+            <div class="container" style="width: 25rem; text-align:center;">
+                    <h3 >Hero {{name}}</h3>
+                    <p>Age: {{age}}</p>
+                    <p>Powers: {{power}}</p>
+                    <p>Weaknesses: {{weakness}}</p>
+            </div>
+        {{/each}}
+    {{else}}
+        <h4>Add a hero to save your town</h4>
+    {{/if}}
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}
