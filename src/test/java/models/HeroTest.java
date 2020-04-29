@@ -51,5 +51,9 @@ public class HeroTest {
         assertEquals(5,mySquad.getMaxNum());
     }
 
-
+    @Test
+    public void testForSquadCause() throws Exception{
+        Squad mySquad = new Squad("Justice League",5,"Stop computer theft");
+        assertEquals("Stop computer theft", mySquad.getCause());
+    }
 }
