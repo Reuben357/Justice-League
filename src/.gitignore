@@ -40,6 +40,8 @@ gradlew.bat
 gradlew
 settings.gradle
 
-# IntelliJ #
-.idea
-.idea/
+# IDE Files
+.DS_STORE
+.vscode
+/.idea/
+.env
