@@ -47,9 +47,9 @@ public class App {
         get("/",(request, response) -> {
             Map<String,Object> model = new HashMap<>();
             ArrayList<Hero> heros = Hero.getAll();
-            ArrayList<Squad>squads =Squad.getAll();
+            ArrayList<Squad> squads =Squad.getAll();
             model.put("heros",heros);
-//            model.put("squads",squads);
+            model.put("squads",squads);
             return new ModelAndView(model,"index.hbs");
 
         }, new HandlebarsTemplateEngine());
@@ -74,29 +74,6 @@ public class App {
 
         },new HandlebarsTemplateEngine());
 
-        //task:process a form to update a hero
-        post("/hero/:id/update",(request, response) -> {
-            Map<String,Object>model = new HashMap<>();
-            String newName = request.queryParams("name");
-            int newAge =Integer.parseInt(request.queryParams("age"));
-            String newPower = request.queryParams("power");
-            String newWeakness = request.queryParams("weakness");
-            int idOfTheHeroToEdit =Integer.parseInt(request.params("id"));
-            Hero editHero = Hero.findById(idOfTheHeroToEdit);
-            editHero.update(newName,newAge,newPower,newWeakness);
-
-            return new ModelAndView(model,"success.hbs");
-        },new HandlebarsTemplateEngine());
-
-        //get: delete an individual hero
-        get("/hero/:id/delete" ,(request, response) -> {
-            Map<String,Object>model = new HashMap<>();
-            int idOfHeroToDelete = Integer.parseInt(request.params("id"));
-            Hero deleteHero = Hero.findById(idOfHeroToDelete);
-            deleteHero.deleteById(idOfHeroToDelete);
-
-            return new ModelAndView(model,"success.hbs");
-        },new HandlebarsTemplateEngine());
         //squad
 
         //get to show new squad form
