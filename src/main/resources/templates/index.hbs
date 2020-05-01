@@ -22,6 +22,23 @@
     {{else}}
         <h4>Add a hero to save your town</h4>
     {{/if}}
+    <h1>Squads</h1>
+
+    {{#if squads}}
+        {{#each squads}}
+            <div class="list">
+                <ul>
+                    <li>
+                        <p>Squad Name: <span>{{name}}</span></p>
+                        <p>Squad Size :{{maxNum}}</p>
+                        <p>Cause:{{cause}}</p>
+                    </li>
+                </ul>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No Squads added Yet.</p>
+    {{/if}}
     </div>
 {{/partial}}
 
