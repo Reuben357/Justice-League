@@ -39,6 +39,7 @@ public class HeroTest {
         Hero myHeroes = new Hero("Flash", 22, "Speed", "Stress");
             assertEquals("Flash", myHeroes.getName());
     }
+    //squad
     @Test
     public void testForSquadName() throws Exception{
         Squad mySquad = new Squad("Justice League",5,"Stop computer theft");

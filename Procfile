@@ -1,1 +1,1 @@
-web:/build/install/Justice-League/bin/Justice-League
+web: /build/install/Justice-League/bin/Justice-League
